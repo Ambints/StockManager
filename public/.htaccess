@@ -1,0 +1,9 @@
+Options -Indexes
+RewriteEngine On
+
+# Si le fichier ou le dossier existe physiquement (ex: css/app.css), on le laisse passer
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Sinon, on envoie tout à index.php (qui est dans le même dossier)
+RewriteRule ^(.*)$ index.php [QSA,L]

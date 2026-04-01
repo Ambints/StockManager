@@ -1,0 +1,5 @@
+RewriteEngine On
+# Si la requête ne concerne pas déjà le dossier public
+RewriteCond %{REQUEST_URI} !^/public/
+# On redirige tout vers public/index.php
+RewriteRule ^(.*)$ public/index.php [QSA,L]
